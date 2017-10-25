@@ -1,0 +1,28 @@
+This is The Slimy Lichmummy (TSL).
+It can be retrieved from www.happyponyland.net.
+Copyright Ulf Åström (ulf.astrom@gmail.com)
+
+TSL is not free software. For several reasons I have not placed it
+under any conventional open source license. I might do so in the
+future, but for now the following shall apply:
+
+The source code is provided so you can compile it on any architecture
+and verify what runs inside your computer.
+
+You may distribute unmodified copies of the source package.
+
+I don't really mind unofficial patches or ports, but I prefer if you
+contact me first.
+
+You are not allowed to sell TSL in any form (source code or binaries).
+
+TSL comes with no warranty. Use it at your own risk.
+
+HPL 2012-09-26
+
+
+Some parts of the program are licensed under other conditions:
+
+mt19937ar.c is distributed under a BSD license; see COPYING_MT.TXT for details.
+
+The font is a modified "Terminus". See OFL.TXT for details.

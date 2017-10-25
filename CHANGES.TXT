@@ -1,0 +1,829 @@
+version 0.40 (2012-09-26)
+* GUI overhaul, rewritten in Allegro
+* Basic animation in GUI
+* Text selection in GUI (only Linux so far)
+* "Fake diagonals" option in GUI
+* Item browser scrolls in a different way
+* Experimental joystick/gamepade support
+* PgUp/PgDn in item browser
+* y/n prompts accept Enter as "yes"
+* [MORE] prompts accept Enter to continue
+* Torches can now be applied even if they aren't lit (equipped)
+* Key reference redesigned/updated
+* Bugfix: Spells (Force Bolt, etc) should be more reliable to hit with now
+* Bugfix: Up/down keys in browser
+* Bugfix: (worn) in inventory replaced with item-specific string
+* Bugfix: Labeling from item submenu no longer leaves the inventory
+* Bugfix: Failed pickups now behave properly
+* Bugfix: Item browser now shows "to pickup" when picking up
+* Bugfix: Fighting blinded sometimes didn't kill enemies
+* Bugfix: Fixed a couple of broken icons
+* Bugfix: Heart Piercer now sorts with other bows
+
+
+version 0.39 (2012-09-16)
+* New menu system, inventory overhaul
+* In-game options menu at '=' (but it doesn't save yet)
+* Ability mapping, bestiary and the augmentation/facet screen also uses the new menu
+* Ability shortcuts have fixed positions on screen
+* Ammo is grouped in the inventory with their corresponding weapon
+* New areas: Underpass, Laboratory, Communications Hub
+* You can partially id weapon damage sequences by using them
+* Completing a damage sequences identifies the weapon
+* Completing a damage sequence rewinds to the start without initial waiting
+* Locked doors and keys
+* Safe teleport option will prompt when you attempt obviously dangerous teleports
+* Artifact auto-identification more interesting
+* Crown of Thorns wounds you when you put it on
+* Axe of Trollish Bloodlust
+* Apply command is back
+* You can assign powers when shapeshifted
+* Bad book messages have different pacing and escaped monsters are sometimes in theme with the book
+* Bugfix: Damage sequence no longer reset by save/load
+* Bugfix: Save/load (64-bit)
+* Bugfix: Map recenter (64-bit)
+* Bugfix: Unequipping weapons now resets sequence properly
+* Bugfix: EP regeneration
+* Bugfix: Identify message used wrong article
+* Bugfix: Flame hands expire message
+* Bugfix: Suppressed equip messages for non-players
+* Bugfix: Proper article for iron-shod staff
+* Bugfix: The path to ascension can now be reached when floating
+* Bugfix: Third person messages when weapons break
+
+
+version 0.38 (2012-03-28)
+* Save/load should work again under Windows
+* Weapons have "damage sequences" instead of min-max damage
+* Status display redesigned
+* Medkits heal 5 instead of 3
+* Fewer monsters, less water and lava
+* "noautoequip" option added (default is on)
+* Internal rewrite of "temporary" weapons and effect expire messages
+* Weapons now auto-identify
+* Hungry books now report when they let go
+* Wound and poison expiry are now reported for monsters
+* Capacitor has a description
+* Dualwield augmentation added
+* Mortar and pestle, hacksaw removed
+* Fire extinguishers and electric prods should now appear properly
+* Build script modified, should work better with certain GCC setups (Ubuntu in particular)
+* Capsules and terminals now get the level floor drawn underneath (SDL only)
+* When the player is blinded even the tile under it is dimmed (SDL)
+* Bugfix: Help screen no longer lists 'e' as key for help
+
+
+version 0.37 (2011-12-01)
+* Uses Mersenne Twister for better random distribution
+* Monster stealth/detection has been altered slightly
+* Wands are now less likely to explode when recharging
+* Dragons lair redesigned
+* Help expanded
+* Attacking helpless (dimmed glyph/sprite) creatures now does double max damage
+* Vision enhancement now gives perception bonus as well
+* Quiver cycling no longer identifies ammo
+* New "Flash" spell (blinds monsters)
+* Books are now unique
+* autocenter now affects tile selection as well
+* First Aid costs 1 EP and restores 1-3 Health
+* 'I' doubles as "inspect tile" (QWERTY only)
+* README and CHANGES changed to DOS format
+* Web traps added (again, they work better now)
+* F.D.G. can shoot sticky webs
+* Weapons can now break
+* Autoequipping ranged weapons and wands works a little bit better
+* Internal: New system for artifact lists (uniqitem)
+* Wands of destroy traps now reveal mimics, but only if the wand itself is identified
+* (SDL) Alt+Enter now toggles fullscreen (or crashes?)
+* (SDL) Winning pauses on exit like losing does
+* (SDL) Bugfix: Cursor no longer does palette swap
+* Bugfix: Poisoned darts now identify when used
+* Bugfix: Chapel should no longer build too far to the west
+* Bugfix: Obstacles are now better recorded when blinded
+* Bugfix: Mimics that haven't been revealed as such don't follow between levels
+* Bugfix: Item selection shortens name to fit on screen
+* Bugfix: The Everlasting Lantern now has a consistent name
+* Bugfix: Wands of pushing now identify when pushing generators, but no longer reveal their charges
+* Bugfix: Magic mapping no longer gives garbled walls
+* Bugfix: The right amount of energy is now spent when using abilities
+* Bugfix: Doors should no longer appear without walls on both sides
+* Bugfix: Sleep is no longer indefinite
+* Bugfix: Acid resistance now has effect
+* Bugfix: Selecting items should no longer split into empty pages
+* Bugfix: Ability mapping looks better
+* Bugfix: Help displays stair tile properly
+* Bugfix: Scrolls should no longer autoequip (or equip at all)
+* Bugfix: Burning items with a torch now reports unburdened status
+* Bugfix: name config/forcegetname should now work, for real
+* Bugfix: Breath attacks no longer pass through forcefields, etc
+
+
+version 0.36 (2011-11-22)
+* Lots of interface tweaks
+* Page Up/Down (even on numpad) can be used for browsing
+* Escape cancels (textmode needs "double escape")
+* . (period) "wait" doubles as "select" when targeting
+* g doubles as "pickup" (or "get", I suppose) (QWERTY only)
+* < and > both work for stairs
+* Enter as a general purpose "do what I mean" (pick up, stairs, wait)
+* (SDL) Directional keys can be used for movement and browsing
+* (SDL) Numpad +, -, * and , do what they should, numpad 0 cancels
+* (SDL) F1 brings up help
+* (SDL) Clicking the window "X" exits
+* (SDL) Pause on exit message
+* (SDL) Transparent sprites
+* Player starting HP doubled and early enemies are somewhat weaker
+* Stairs are no longer directional, they're just stairs (%)
+* Scrolls of wishing removed
+* @ summary screen works again and allows you to inspect augs/facets
+* "autocenter" option added
+* Internal: level memory now uses graphical entities instead of tiles
+* Bugfix: Message history should wrap properly now
+* Bugfix: books now have a graphical entity
+* Bugfix: Abilites unmap properly when returning to native shape
+* Bugfix: "Fire in direction" in help
+* Bugfix: "escapes from the book!" message fixed
+* Bugfix: Teleporting out of water updates altitude
+* Bugfix: Gravelings leap at you
+* Bugfix: Tab key fixed
+* Bugfix: name config directive should now work on Windows
+
+
+version 0.35 (2011-11-20)
+* experimental SDL port
+* "dvorak" config option for built-in keymap
+
+
+version 0.34 (2011-11-17)
+* Tranquilizer darts
+* Ability menus work a little better
+* Abilities (only some of them yet) have descriptions, these are also used for wands
+* Undetected creatures hit by missiles should now be revealed
+* Monsters have been given more abilities to make shapeshifting more useful
+* Special ammo no longer auto-identifies, but some other items do
+* Enemies spawn slightly faster
+* Electrified plate traps added
+* Experimental: Bind several keys to the same action
+* Bugfix: Being blinded by books updates the map as well
+* Bugfix: Better distribution for ability keys (no more clashes)
+* Bugfix: Abilities now map better when changing shape
+* Bugfix: Garbled string when items dissolve in slime
+* Bugfix: Removed a message when resting
+
+
+version 0.33 (2011-11-16)
+* Inventory now sorts items into categories and item actions accept "filter" command. Different actions sort items intelligently (e.g. throwing shows ammunition, potions and weapons first, as those are most likely to be thrown)
+* "invoke" and "apply" commands merged into "use". "drink" and "read" still exist.
+* Books added, teach you new things
+* Illiteracy prevents you from reading inscriptions, scrolls and books. It also hides scroll labels and item labels.
+* Cold and fire resistance fixed. Frost Ray now does cold damage. Explosions and Breathe Fire do fire damage.
+* Only "general" damage affects armor
+* Monsters in lava and water will no longer sit still. Some will use Blink and levitation to get away.
+* Amphibious monsters now follow you into water
+* Tentacles and slimes no longer dodge
+* Floating brains can now take offensive action
+* You can now eat all kinds of items
+* Monster become aggravated even if you miss or they dodge
+* Recharging now prompts only for items that can be recharged
+* The Gaoler added (unique)
+* Augmentations now state what attributes they modify
+* Deathspell (50/50 chance of killing yourself or a monster)
+* First Aid ability (removes wounds)
+* Shock debugged, now damages creatures and can disable forcefields
+* Electric prod (Shock), fire extinguisher (Frost Ray)
+* Bugfix: Blinded monsters can be meleed again
+* Bugfix: Inscriptions are now only displayed once
+* Bugfix: Nameless horrors now displayed as H
+* Bugfix: When closing a door, the player no longer sees "... wakes up!" messages for creatures that are behind the door
+* Bugfix: Floating demon genitalia actually made floating
+* Bugfix: Shapeshifted players no longer prevent monsters from attacking
+* Bugfix: Unique creatures are no longer immortal
+* Bugfix: Swords are now ) instead of /
+* Bugfix: Wands no longer reveal their charges unless identified (for real? see 0.28)
+* Bugfix: No more tentacle death messages outside FOV
+* Bugfix: Something attacking and missing while the player is asleep no longer reveals its identity
+* Bugfix: Better message when trying to rest while poisoned
+
+
+version 0.32 (2011-11-11)
+* Bestiary with "/" inspect command (few monsters are included yet)
+* Random inscriptions
+* Hellhounds get Noxious Breath
+* The player has a better chance of hitting when throwing potions
+* The Chapel reworked
+* The Vault redesigend to use 2-tile wide corridors
+* Summoning chooses a random location, not only northwest of the player
+* Potion of blindness (does what it sounds like)
+* Blindness cause enemies to stumble randomly and attack each other
+* Sleeping and blinded creatures are displayed dimmed ("bold black")
+* Bugfix: Polymorphing into certain creatures no longer hangs the game
+* Bugfix: Mermen no longer only get leather jackets (!)
+
+
+version 0.31 (2011-11-10)
+* Win condition added (with the least satisfying ending imaginable)
+* Effect and item lifetimes are based on turns instead of ticks
+* Interfacing with generators only disables them temporarily
+* UI polished
+* Water doesn't freeze if someone is in it
+* Better distribution of secret doors
+* Blade hands boosted
+* Automatic unequip when dropping
+* Resting reports when something comes into view or a door opens
+* Explosive damage works better
+* Lanterns explode when thrown
+* Poison works much faster on enemies than the player
+* Items weigh less but burdened slowdown penalty is more severe
+* Light sources going out and armor being destroyed prints a "no longer burdened" message
+* Gnoblins get matching ranged weapon and ammo
+* Phasing updates the map immediately
+* (Un)equipping an item prints its inventory letter
+* Some new monsters (at least stubs for them)
+* Source should build easier (less strict compiler options)
+* Bugfix: Sleeping monsters no longer redraw the screen (destroyed projectile paths)
+* Bugfix: Unidentified wands no longer reveal what spell they have in the item browser
+* Bugfix: Dataprobes are spent even if you have only one
+* Bugfix: Things out of view should no longer print a death message
+* Bugfix: Monsters opening doors
+
+
+version 0.30 (2011-11-04)
+* Inventory thoroughly reworked: new item browser that allows noun-verb actions
+* Equipping and removing items are now free actions
+* Monsters now respawn and should be a little less stupid when chasing you
+* Picking up ammo automatically reloads it if no ammo is equipped
+* Lava now has a chance of destroying your boots
+* "Call item" is now called "label"
+* Paralyse removed
+* Potions now shatter when thrown
+* Firing missile now says "your <missile>"
+* Forcefields now damage armor
+* Forcefield generators now work in pairs
+* Forcefield generators can now be pushed around
+* The Lurker no longer sleeps
+* Items are now less likely to burn/boil
+* Scrolls of identify and recharging now identify themselves when used
+* Potions of yuck reinstated (not sure why they were removed)
+* Improved treasure distribution
+* Sleeping now updates the status display
+* Strength enhancement split into mechanical arms (that enable Push)
+* The Ominous Cave should be a bit less cramped now
+* Augmentation selection now wraps text better
+* Potions shatter when thrown and leave glass traps if the terrain permits
+* Resting now includes slow and stun as well
+* Cursed items have been removed entirely
+* Removed scrolls of remove curse
+* Removed amulets (too few were useful)
+* Removed leather boots (they did nothing)
+* Removed potions of heroism (they did nothing)
+* Tile inspection is more brief
+* Saving has been disabled on Windows until someone fixes its bugs
+* Bugfix: Explosions should no longer crash the game
+* Bugfix: Should no longer crash when reading config file on Windows
+* Bugfix: Should no longer crash on character creation (!)
+* Bugfix: Monsters no longer cast area spells in random directions
+* Bugfix: Tile inspection now lists medkits properly
+* Bugfix: Item inspection now displays max damage properly
+* Bugfix: Backspace now works during name entry on Windows
+* Bugfix: Monsters killing each other should now give better messages
+* Bugfix: Elixirs that cancel levitation make you land
+* Bugfix: Creatures no longer dodge in their sleep
+* Bugfix: Melee and ranged attacks should now interrupt resting, even while blinded
+* Bugfix: Artifact axes' articles adjusted
+* Bugfix: Dart traps no longer reveal the identity of hidden monsters
+* Bugfix: Items disintegrated by forcefields only print messages if they are within view
+* Bugfix: Small grammatical fix for slimes
+* Bugfix: Wand of destroy trap can now be shift-invoked
+
+
+version 0.29 (2011-10-25)
+* New EP scheme (turnbased instead of tick)
+* Fixed critical bugs with magic auto-id (sorry about that)
+
+
+version 0.28 (2011-10-25)
+* Forcefields added
+* Dataprobe tool added
+* The Lurker added (new boss creature)
+* Inspect item now wraps text properly
+* Medkits now disappear when you use them, even while blinded
+* "dotfloors" option added (display floors as traditional periods)
+* yes/no options simplified
+* Boots of levitation removed (unbalanced)
+* "generic upgrade" when no more augs are available
+* Bugfix: Destroy Trap now removes the trap from the screen as well
+* Bugfix: Wands of phasing now auto-identifies when used
+* Bugfix: Wands should no longer auto-id their charges when used (needs scroll)
+* Bugfix: Mimics should no longer appear as inverted ? (needs to be verified)
+* Bugfix: Wands, scrolls, potions should now use proper a/an articles
+* Bugfix: Important things should no longer appear inside walls
+* Bugfix: Frost Ray does damage again
+
+
+version 0.27 (2011-10-24)
+* Fatigue replaced by Health (also: medkits added)
+* Augmentations have been merged with facets, obelisks changed into upgrade capsules
+* Many new augmentations
+* Abilities now map automatically to free shortcuts slots
+* Weapons now have min-max damage
+* Attack and dodge are now chances in %
+* Stairs now display where they lead
+* Doors, wands and weapons have changed appearances
+* Enemies now die in more interesting (violent) ways
+* Armor has durability and can be worn out
+* Fur pelt merged with cloaks
+* Wands can be equipped and shift-invoked
+* Phase spell (short teleport)
+* Grenade launchers removed, grenades and force bolts always ricochet
+* Speed system rebalanced, AGAIN! (still needs work)
+* "Greedy" corner FOV
+* Antidote replaced by generic "elixir"
+* Cursed items are much rarer now
+* Some corridors are wider now
+* Running out of ammo cycles to the next
+* You can now rest to remove wounded and blinded status
+* Potions of poison can now be applied to poison darts
+* Torches can now be applied to burn items
+* Darts and grenades can now be applied to set traps
+* Hacksaws added, can be applied to bullets
+* Fire traps are now called booby traps
+* Crossbows added, shoot darts
+* Datajack and terminals added, but they don't do much yet
+* When you run out of ammo you automatically cycle to the next available (only with a weapon equipped)
+* Some creatures can no longer open doors (but they make noises)
+* Being ambushed now pauses the game
+* Amulet of unchanging renamed to retain form
+* Bugfix: Grinding no longer consumes a turn if the action was cancelled
+* Bugfix: Newlines adjusted in status display
+
+
+version 0.26 (2011-03-20)
+* Enchantments have been removed entirely
+* Augmentations added (1 slot by default, facets add more)
+* Resistance mechanic modified
+* Shock ability added
+* Cyborg enemy removed
+* New facet: Cyborg (extra augmentation slots)
+* New facet: Amphibian (eliminates risk of drowning)
+* More facets: Stalker, Commando, Hacker, Traitor
+* Food items added
+* Electric snake
+* Status area now displays range of missile weapons (if known)
+* Status area now displays throw range for standalone missiles
+* Quiver cycling now works without a weapon
+* Equipping items now prints a message
+* Cursed items now reveal themselves when equipped
+* Rest command works again
+* Bugfix: Poisoned/wounding missiles no longer print messages outside FOV
+* Bugfix: Auto-id when picking up items now uses proper quantity
+* Bugfix: Garbled string when comparing items
+* Bugfix: You can no longer eat off the floor while floating
+* Bugfix: "Flamming" arrows now have better spelling and grammar
+* Bugfix: Killed by a potion of pain no longer crashes or leaks memory
+* Bugfix: Fire and poison breath now cause the proper death message
+* Bugfix: Polymorphed allies should no longer become idle
+* Bugfix: The player sometimes gained Fatigue Limit when shapeshifting
+* Bugfix: Equipping missile weapons will no longer cycle ammo if we already have something equipped
+* Bugfix: Flame spirits can no longer be wounded or poisoned
+* Bugfix: Severed hands can no longer be backstabbed
+* Bugfix: Mark/Recall now work again
+* Internal: New build system
+
+
+version 0.25 (2011-03-08)
+* Improved help system
+* You can now use items directly from inspect mode
+* Careers are now known a facets and will eventually be more general purpose
+* Shapeshifting now preserves status effects
+* Creatures that don't breathe can no longer use breath attacks
+* Yell is now an ability instead of its own command (config files containing "bind yell" are no longer valid)
+
+
+version 0.24 (2011-01-30)
+* Swimming implemented (including swimming skill)
+* Better pathfinding for monsters
+* Statistics display no longer reveal modifiers from unidentified equipment
+* Carried weight is no longer visible
+* Weapons can no longer be enchanted
+* Unidentified weapons no longer display their damage and precision
+* Sleeping now obscures FOV
+* Area spells now always display the entire area (within FOV)
+* Walls no longer crumble into T-sections along edges
+* New items: gas mask, wand of pushing
+* Mushrooms now heal as well as poison (!)
+* Poison darts and hollow-point bullets now also appear in piles
+* morgue.txt improved
+* You can now interact while shapeshifted
+* Kicking now has knockback effect
+* Potions of levitations now have a (much) longer effect
+* You can now use most items even while swimming
+* Internal: find_spot() cleanup
+
+
+version 0.23 (2011-01-09)
+* Water and lava reintroduced
+* Water is now _, pentagrams *, lava ^
+* Level memory optimized
+* Charges can now only be invoked for identified items (exception: wands)
+* Enemy targeting with Frost Ray fixed
+* Looking at the players location now displays more information
+* All stairs are now listed when looking at them
+* Amulets of strength now print a message if they push you above/below the burdened threshold
+* Monsters now have different carrying capacity
+* Flash traps no longer have any effect if you're already blinded
+* Cosmetical fix: Buckshot is now called simply "buckshot" when fired
+* Config files no longer require an ending slash is $HOME
+* Internal: Player and monster shapeshifting merged, cloud generator
+
+
+version 0.22 (2011-01-06)
+* Speed rebalanced
+* Being burdened now slows you, not speed you up
+* Burdened status is now displayed in statistics
+* Items no longer auto-id, except missiles when you pick them up
+* Items are now displayed as "safe" if they are known not to be cursed
+* Status flags are now shown in a better way in morgue.txt
+* Throwing with fire_* (shift+direction, without a weapon equipped) now works properly
+* Removing a missile weapon now removes missiles as well
+* Fixed several bugs related to item stacking
+* Creatures adjacent to stairs now follow you when you change level
+* You can now throw weapons and ammo even if they are equipped
+* Breath attacks and explosions now wake and aggravate creatures affected
+* All undead and some other creatures are now immune to sleep
+* Missile attacks now give fewer and different messages while blind
+* You can no longer use Aimed Shot while blind
+* Being ambushed/bumping into undetected creatures now works differently
+* Grenades now print proper death messages
+* Dragon scales are now an artifact
+* Wands of Frost Ray now identify properly
+* Damage is no longer displayed twice in item data
+* You can now eat severed hands
+* Potions of yuck added
+* Heavy corpses (ogre)
+* Newlines adjusted in statistics display (finally)
+* Invisibility removed since it wasn't used for anything
+* More variety added to dungeon cuisine (this is possibly the most important change of all - ask any adventurer that has been eating corpses and bread this whole time)
+
+
+version 0.21 (2011-01-03)
+* Sleep (potion, effect, immunity)
+* Enslavement and allies now work better
+* Allies now share their FOV (you see what they see)
+* Missile code is now more solid
+* Poisoned missiles
+* Some creatures now have poison resistance
+* Item weights revised, amulet of strength added
+* Monsters should no longer polymorph into the same kind of monster
+* Altitude now updates properly when polymorphing
+* Hollow-point bullets
+* Light has longer duration
+* New enemies (chainsaw ogre, et al), new spells (mudball), new areas
+* Internal: Missile spells merged, item frequency test
+
+
+version 0.20 (2010-12-28)
+* "Magic" attribute added
+* FOV finetuned (visible range can now be 1, range 2 is a circle and not a square)
+* Enslavement is now a spell + wand, no longer potions and scrolls of seduction
+* Breath spells now have a different area of effect, Breathe Fire added
+* Fireball works better now
+* Flash traps are now displayed properly
+* Fixed a message bug when enemies drink potions
+* You no longer get warnings about light sources about to go out while blinded
+* Eating now reports "you are no longer burdened"
+* Some new careers defined but not fleshed out (spelunker, druid)
+* Internal: Area targeting, missile ranges made more flexible, targeting now uses directions (expect some new bugs for a while)
+
+
+version 0.19 (2010-12-16)
+* "Wounds" added, have the effect of "old" poison
+* New poison
+* Backstabbing
+* Career system, obelisks (interact with them)
+* Boss chambers integrated into regular levels
+* You can no longer read scrolls while blind
+* Internal: Merged locations into the regular level structure, teleport cleaned up
+
+
+version 0.18 (2010-10-10)
+* Blindness (including flash traps)
+* Fixed critical bug with corrupt savefiles
+* Pentagrams are back
+* Mushrooms!
+* Scroll of amnesia
+* Bug introduced: Charming no longer works, needs to be rewritten
+* Internal: "Sweet spots" for better dungeon feature placement
+
+
+version 0.17 (2010-10-09)
+* The welcome message is now even friendlier
+* Accumulated damage is now called Fatigue
+* Polymorph traps
+* When gaining new abilities, you are now prompted which shortcut to assign it to 
+* Magic mapping now only show wall tiles and not empty space inbetween
+* "Dash" ability
+* Fixed where it said "MP" in the ability menu
+* The (useless) "Hungry" state has been removed
+* Weapon enchantments now only affect precision
+* Most attacks now do a fixed amount of damage
+* New poison system (does damage when you move, decays over time)
+* Tuned dungeon generator, minor bugfixes
+* Internal: new framework for area effects, more flexible branching, shortcuts to message queueing
+
+
+version 0.16 (2010-04-05)
+* Improved AI (enemies now use items)
+* Damage score instead of HP
+* A new level added
+* New enemies and enemy abilities
+* There is now a safe start area where no enemies are present
+* Traps should no longer be triggered when floating
+* Elemental damage for missiles and electricity damage/resistance added
+* Trap detection skill (passive)
+* (Internal) Wrote my own getstr() since the one curses didn't do what I wanted
+
+
+version 0.15 (2010-03-10)
+* New dungeon generator
+* New FOV
+* New resistances and damage
+* New stealth
+* Overworld, templates, experience removed
+* Fixed a small bug with loading and re-saving
+* Lots and lots of other changes
+
+
+version 0.14 (081102)
+* Got rid of the color
+* The FOV/lighting system has been simplified (Vision attribute)
+* A new attribute/roll system (internally called roll_xn)
+* Speed is now measured linearly
+* Basic experience and character improvement
+* Skills changed
+* Removed shields, added firearms
+* When entering a new area, Stealth is refilled
+* When inspecting items, it should now be more obvious which one is already in use
+* Fixed overworld wraparound LOS bug
+* Template selection no longer gets stuck on Paladin
+* Secret doors now show up on the map properly when revealed
+* When trying to read in the dark, a message is displayed *before* selecting an item
+* Books removed
+* "Powers" renamed "abilities" and merged with the attribute system
+
+
+version 0.13 (080717)
+* Save and load
+
+
+version 0.12 (080603)
+* Overworld LOS
+* The fear system has been removed
+* Mark & Recall spells added
+* Message bar width reduced by 1
+* Explosions now work near the map edge
+* Doors should no longer be created side by side
+* Fixed several bugs related to poison resistance
+* Fixed a bug when wands explodes from being over-charged
+* Wands of Frost Ray should now freeze lava when thrown into it
+* Smugglers, spells, arrows, etc are now displayed properly
+* "skills" command removed; this will be merged into the status display
+
+
+version 0.11 (080511)
+* The numpad is now supported (tsl_conf_numpad)
+* Key summary added to help
+* Traps now have colors
+* Magic mapping works again
+* Shields now have a maximum number of consecutive blocks
+* Changes (mostly internal) to creature death messages
+* If a stealth-reducing item is equipped, current stealth points will now be capped at the new maximum
+* The light spell now updates the map properly
+* Hunger added
+* You don't heal and can't rest while hungry
+* Rest is now interrupted if your light source goes or is about to go out
+* Locations can now have custom entry/exit points and directions
+* Resistances have been changed to a simple damage reduction
+* Poison resistance added - works differently than the others
+* City-building algorithm
+* "status" keybinding renamed to "flip"; "status" will be used for something else later
+
+
+version 0.10 (080427)
+* A new stealth system
+* A new backend for graphical entities
+* Many dungeon generator tweaks
+* T-walls are now only displayed if the player has seen what's behind them
+* Scrolls now have random appearances
+* Inspecting tiles now displays creatures standing there
+* Stairs should work better now
+* Body armor can now be destroyed
+* EP regenerates again
+* Doors can no longer be closed when something is in the way
+* The starting torch is now always full
+* Ghouls now moan ;-)
+* All staves are now two-handed
+* Crossbows/bolt removed
+* Dart and web traps now [MORE] when activated
+* You can now leave the dungeon
+
+
+version 0.9 (080408)
+* Levels can now be larger than the screen
+* Poison (antidotes now have a purpose)
+* A first attempt at a help system (press '?')
+* Config parser bugs fixed
+* Default keys are now always loaded at startup
+* "defaultkeys" and "clearkeys" removed since they did nothing useful
+* Finally fixed a bug (I think) in the message queuing code that sometimes skipped random messages (usually a single word on a line)
+* Lonely lava tiles are now lit
+* Firing no longer complains about no ranged weapon being equipped
+* Things "destroyed" (not "killed") by missiles should now display the right message
+* Missiles and rays should no longer pass through doors, and
+* Enemies should no longer aim through doors, and
+* Doors can no longer be closed if something is in the way
+* New skills: Traps, Fire Aptitude, and more, but most are only stubs for now
+* Weapon skill now gives a damage bonus as well as to-hit
+* The first levels are now generated less predictable
+* The Scribe statue now identifies Wish scrolls
+* Necromancer template added
+* Unchanging and Permafloat now in status display
+
+
+version 0.8 (080206)
+* Scrolls of wishing
+* New level generator for the upper levels
+* New level generator for the caves
+* Polymorph now works for enemies as well
+* Amulets of unchanging
+* Stunning no longer paralyses but cuts speed in half
+* New area: The Temple of Deceit!
+* Item definitions are now stored differently (internal)
+* More creatures now spawn with random artifacts
+* Configuration parser is much more reliable and verbose now
+* Cursor default changed to "visible" (PuTTY users worldwide rejoice)
+* largecursor config directive added to re-enable the "very visible" cursor
+* Resting no longer displays a lot of "Rest..." messages
+
+
+version 0.7 (080127)
+* Character templates added to avoid early game boredom
+* Levitation
+* Character stats split in two views (tab switches by default)
+* Item enchantments now behave differently
+* You can now c'A'll an individual item something
+* There are now two types of rings; enchantable and fixed
+* You can now detect enemies in the dark (high Perception helps)
+* Weapons are now only Slow/Normal/Fast
+* Throwing and firing now has different ranges
+* Strength now affects throw/fire ranges (but not spells)
+* "Sewer" map generation improved
+* Books of Identify removed (too powerful)
+* Some wands removed; only "directional" wands remain
+* Behaviour of several spells changed (destroy trap, enchant, identify, etc)
+* Statues are now '4'
+* Coffins added ('8')
+* Teleporting into water/lava now works properly (earlier it killed you)
+* You no longer get the "Shapeshift Native" power when shapeshifted
+* Mind no longer counter auras of fear (for now; will probably change later)
+* Item types separated from display code
+* It is no longer possible to block spells with a shield
+* Levels now track their own lighting
+* Creatures now track their own (individual) LOS
+* Permalit areas removed
+* Removed some superfluous enemies (bone lord, jelly)
+* Charges are no longer displayed when a wand explodes
+* Minor fix: blink messages now start with a capital
+* Potions and wands now register themselves for random appearances
+* Lots of internal cleanup, commenting and splitting stuff up
+* 30k lines broken (actually 31k)
+
+
+version 0.6 (080101)
+* Enemy alignments implemented - you can now have allies (charm, summon)
+* Scroll of Summon Familiar, scroll of Seduction and potion of charming added
+* Creatures surrounding the stairs now follow between levels
+* Message history added (very basic)
+* Quitting now requires confirmation
+* The maze has been implemented
+* Shapeshifting improved
+* Evasion split into Stealth and Dodge, Perception added
+* Enemies now throw spare weapons and certain potions
+* You can now cycle ammo with the "quiver" key
+* When equipping a missile weapon, the first compatible ammo is selected
+* If no launcher is in use, you now resort to throwing when pressing fire_*
+* New encounter system for enemy and trap placement
+* Only one random item should normally be generated on each tile now
+* You can now be burdened (speed and rolls penalty)
+* Being in darkness now gives a bonus instead of a penalty for being in light
+* Dart traps added
+* Fixed bug that made books harder to read with higher Mind
+* Level depth is now displayed only for worlds with more than one level
+* Some creatures changed letters
+* Potion messages for creatures now start with a capital letter
+* The sewers and the drowned city are a bit more unique now
+* Explosive items no longer give a strength bonus when equipped
+* Statues no longer appear in corridors
+* Cursed items aren't that bad anymore (more changes to come)
+* Uncurse (removed curse status) replaced by Remove Curse (unequip item)
+* Fixed a small bug related to infinite lightsources
+* Bumping into an undetected enemy now costs a turn
+* Replaced some default keybindings with Adrals better suggestions
+
+
+version 0.5 (071209)
+* Elemental damage and resistances
+* Missile and magic system refined
+* Use item has been split into drink, read, apply, invoke
+* You can now detect traps when walking/waiting
+* Rest command added
+* Some items changed symbols
+* There are now conventional dungeon branches, not just arbitrary portals
+* Item weights added (needs more work)
+* Different worlds now have different traps
+* Some more dungeon generator tweaks
+* Unique death messages now work as intended
+* Fixed a bug during power list configuration
+* Fixed a bug where the second dual-wielded weapon was displayed even if the player has a magic (conjured) weapon
+* Fixed a bug in the AI that made monsters go berserk whenever they reached a corner - they should only do so if they are cornered with the player next to them
+* Inventory now just displays items appropriate for the desired action
+* +/- are now customizable and displayed in the inventory screen
+* Current HP/EP is now capped to max when removing items
+* Scorpion trap added
+* Normal floor tiles now appear blank when magic mapped so it's easier to tell if they've been explored or not
+* Fixed a small bug that gave statues the wrong HP
+* Fixed a bug with pentagram-identification
+* Stun, drain, etc, properties for items are displayed in a better way now
+* New spell: Frost Ray
+* New spell: Conjure Blade
+* Webs and web traps
+
+
+version 0.4 (071124)
+* World travel implemented
+* No more levels/classes/XP
+* Statues added
+* Dungeon generation tidied up and tuned to produce cleaner dungeons
+* A first attempt at a stealth system
+* "Throw" command added
+* fire_* bindings added (you can now fire a missile e.g. with shift+direction)
+* spell* bindings added (you can now bind spells to arbitrary buttons)
+* Reagents
+* Armor now gives a HP bonus instead of damage reduction
+* Different actions now take different amounts of time
+* Weapon speed and to-hit added
+* Random weapon effects (drain, knockback, blink, etc) implemented
+* Damage, invoke power and other item variables made more general
+* Manual updated (finally!)
+* Potions affect enemies when thrown
+* When inspecting items, you can now compare it to whatever you currently are using
+* You can now see approximately how much time remains for light sources
+* The morgue dump now contains the version of the game played
+* "Scavenger" AI added - monsters will search for food
+* Wands now have random appearences
+* Levels and worlds can now have messages attached to them
+* Artifact (unique) items implemented
+* You can now grind items with a mortar and pestle
+* Recharging wands now works somewhat
+* Negative item modifiers no longer go away with a positive enchantment, and;
+* Positive item modifiers no longer go away with a negative enchantment
+* The effect of potions of nightvision is now permanent
+* You now need light to read
+* Resistances disabled until the new resistance system is in place
+* Multi-line message window
+
+
+version 0.3 (070922)
+* Changed entire rule system into something roughly Fudge-like
+* Greatly improved AI (simple state machine)
+* Non-linear attribute advancement
+* If no config file is found, we should now fall back to some safe defaults
+* Enemy archers
+* Shapeshifting
+* Classes changed/added/renamed
+* Screen routines modified to avoid flicker
+* Replaced find_wall_spot()/find_free_spot() with the smarter find_spot()
+* Fixed a bug which caused uniques to display some garbled string when killed
+* Battle tactics (it will be replaced by something more general purpose soon)
+* Dual-wielding
+* Shields
+* Basic fear/sanity system
+
+
+version 0.2
+* Attribute rolls altered
+* The whole game more or less rebalanced from scratch due to this
+* Fixed a crazy bug that rebuilt the dungeon twice when changing level
+* Uniques added (this was what made me discover the "crazy bug")
+* Traps added
+* Only armor items (excluding light sources) can now be enchanted
+* Magic system modified (spell levels removed, spell strength now depends on the Mind attribute)
+* Cursed books now have a purpose
+* New spells (Ghoul Touch, Aura, etc)
+* Carrying capacity added
+* Stackable items added
+* Bows and arrows added
+* Fixed a small bug which caused pacifist monsters to only move in one direction
+
+
+version 0.1
+* First release (duh).

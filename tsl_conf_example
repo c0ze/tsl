@@ -1,0 +1,8 @@
+nomorgue
+name Hacker
+dotfloors
+fullscreen
+autocenter
+bind quit Q
+bindn select 10
+bindn cancel 32
