@@ -1,0 +1,3 @@
+db_server: test
+db_pass: pass
+db_user: user
