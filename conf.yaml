@@ -1,3 +1,8 @@
-db_server: test
-db_pass: pass
-db_user: user
+server1:
+  db_server: test1
+  db_pass: pass1
+  db_user: user1
+server2:
+  db_server: test2
+  db_pass: pass2
+  db_user: user2
